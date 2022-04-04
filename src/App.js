@@ -3,10 +3,8 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate
 } from "react-router-dom";
 import Login from './components/auth/Login';
-import Registration from './components/auth/Registration';
 import Welcome from './components/welcome';
 import { AuthProvider } from './context/ContextProvider';
 import useAuth from './hooks/useAuth';
