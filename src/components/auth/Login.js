@@ -3,14 +3,23 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import { useNavigate } from 'react-router';
 
 const Login = () => {
-    const { login } = useAuth();
+    const { login, isAuthenticated } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const history = useNavigate();
 
     const onSubmit = (data) => {
         login(data.email, data.password);
     }
+
+    useEffect(() => {
+        if(isAuthenticated) {
+            history("/welcome")
+        }   
+    }, [isAuthenticated])
 
     return (
         <Card className="login-card mx-auto mt-5">
