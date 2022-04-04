@@ -33,13 +33,6 @@ const Login = () => {
                     
                     <button type="submit" className="btn btn-success">Sign In</button>
                 </form>
-              
-                <div className="text-end">
-                    <div>
-                        Don't have account
-                        <Link to='/'>Sign Up</Link>
-                    </div>
-                </div>
             </CardBody>
         </Card>
     )
